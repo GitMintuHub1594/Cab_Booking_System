@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+        <b><h1>Login</h1></b>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input label="Username" type="text" value={username} onchange={handleOnChangeUserName} required></lightning-input>
+            <lightning-input label="Password" type="password" value={password} onchange={handleOnChangePassword} required></lightning-input>
+            <lightning-input label="Remember me" type="checkbox"></lightning-input>
+            <lightning-button variant="brand" label="Log In" onclick={handleLoginClick} class="slds-grid slds-grid_align-center"></lightning-button>
+        Don't have an account?<a onclick={handleRegistration} ><b>Register</b></a> 
+        </div>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,58 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-around_large">
+            <p><b>Enter PickUp Address</b></p>
+            <lightning-input type="text" label="Street" value={PickUpStreet} onchange={handlePickUpStreet}></lightning-input>
+            <lightning-input type="text" label="Landmark" value={PickUpLandmark} onchange={handlePickUpLandmark}></lightning-input>
+            <lightning-input type="text" label="City" value={PickUpCity} onchange={handlePickUpCity} disabled="true"></lightning-input>           
+            <lightning-button label="Confirm PickUp Location" onclick={handleConfirmPickUp} class="slds-grid slds-grid_align-center"></lightning-button><br><br>
+            <p><b>Enter Drop Address</b></p>
+            <lightning-input type="text" label="Street" value={DropStreet} onchange={handleDropStreet}></lightning-input>
+            <lightning-input type="text" label="Landmark" value={DropLandmark} onchange={handleDropLandmark}></lightning-input>
+            <lightning-input type="text" label="City" value={DropCity} onchange={handleDropCity} disabled="true"></lightning-input>           
+            <lightning-button label="Confirm Drop Location" onclick={handleConfirmDrop} class="slds-grid slds-grid_align-center"></lightning-button>
+        </div>
+
+    <template lwc:if={isShowMap}>
+        <lightning-map
+            map-markers={mapMarkers}
+            center={center}
+            zoom-level="8">
+        </lightning-map>
+        <lightning-button label="Confirm Booking" onclick={handleConfirmBooking} variant="brand" class="slds-grid slds-grid_align-center"></lightning-button>
+    </template>
+</lightning-card>
+<!-- Modal Starting -->
+    <template lwc:if={showModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="Close" variant="inverse"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Cab Booking Details</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <template lwc:if={recordId}>
+                        <lightning-record-view-form record-id={recordId} object-api-name="Cab_Reservation__c">
+                            <lightning-output-field field-name="Customer_Name__c"></lightning-output-field>
+                            <lightning-output-field field-name="Travel_Date_Time__c"></lightning-output-field>                      
+                            <p class="slds-text-body_regular">Pickup Location: {PickUpStreet}, {PickUpLandmark}, {PickUpCity}</p><br>
+                            <p class="slds-text-body_regular">Drop Location: {DropStreet}, {DropLandmark}, {DropCity}</p>
+                        </lightning-record-view-form>    
+                    </template>
+                    <template if:false={recordId}>
+                        <p>No Record ID received yet.</p>
+                    </template>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal}>Close</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+<!-- Modal Ending -->
+
+</template>

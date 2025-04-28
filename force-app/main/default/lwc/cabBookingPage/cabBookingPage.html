@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <b><h1>Cab Reservation</h1></b>
+        <div class="slds-p-around_medium lgc-bg">
+             <lightning-record-form
+                    record-id={recordId}
+                    object-api-name=Cab_Reservation__c
+                    fields={fields}
+                    mode="edit"
+                    onsuccess={handleSuccess}>
+            </lightning-record-form>
+        </div>
+    <template lwc:if={showDetailPage}>
+        <c-testing-map-page record-id={currentRecordId}></c-testing-map-page>
+    </template>
+    </lightning-card>
+</template>
