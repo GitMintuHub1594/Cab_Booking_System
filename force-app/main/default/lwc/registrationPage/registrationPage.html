@@ -1,14 +1,15 @@
 <template>
-    <lightning-card>
-        <b><h1>Registration Page</h1></b>
-        <div class="slds-p-around_medium lgc-bg">
-        <lightning-record-form 
+    <div class="registration-wrapper">
+        <div class="registration-box">
+            <h1>Registration Page</h1>
+
+            <lightning-record-form 
                 record-id=""
                 object-api-name="Cab_Customer__c"
                 fields={fields}
                 mode="edit"
                 onsuccess={handleSuccess}>
-        </lightning-record-form>
+            </lightning-record-form>
+        </div>
     </div>
-    </lightning-card>
 </template>

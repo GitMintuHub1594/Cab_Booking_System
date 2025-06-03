@@ -1,3 +1,14 @@
-h1{
+h1 {
     text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+
+.reservation-wrapper {
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec); /* Soft full-page background */
 }

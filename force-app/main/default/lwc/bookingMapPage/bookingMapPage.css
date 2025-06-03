@@ -1,0 +1,77 @@
+/* Wrapper Styling */
+.page-wrapper {
+    background: linear-gradient(to right, #f0f8ff, #e6f7ff);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+/* Card Styling */
+.form-card {
+    max-width: 700px;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+}
+
+/* Section Titles */
+p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 1rem;
+}
+
+/* Input Fields */
+.custom-input {
+    margin-bottom: 1.2rem;
+}
+
+/* Button Styling */
+.custom-button {
+    margin-top: 1rem;
+    background-color: #0070d2;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.6rem 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 112, 210, 0.3);
+}
+
+/* Map Styling */
+lightning-map {
+    margin: 2rem 0;
+    border: 2px solid #dfe6e9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Modal Styling */
+.slds-modal__container {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.slds-modal__header {
+    background-color: #0070d2;
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.slds-modal__title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.slds-modal__content {
+    background-color: #ffffff;
+    font-size: 1rem;
+    padding: 1.5rem;
+}
+
+.slds-modal__footer {
+    background-color: #f5f7fa;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}

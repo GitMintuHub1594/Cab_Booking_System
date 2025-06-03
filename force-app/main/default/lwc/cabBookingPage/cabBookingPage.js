@@ -17,7 +17,7 @@ export default class CabBookingPagee extends NavigationMixin(LightningElement) {
 
     handleSuccess(event){
         this.recordId = event.detail.id;
-        this.showDetailPage=true;
+        this.showDetailPage = true;
         //Show information toast message
         const msg = new ShowToastEvent({
             title: 'Location',

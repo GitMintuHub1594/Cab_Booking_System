@@ -21,7 +21,7 @@ export default class LoginPage extends NavigationMixin(LightningElement) {
         // 3. Navigation to next Component
         validateLoginDetails({ username: this.username, password: this.password })
             .then(result => {
-                let cmpDef = {componentDef:"c:testingCabBookingPage"};
+                let cmpDef = {componentDef:"c:cabBookingPage"};
                 let encodeDef = btoa(JSON.stringify(cmpDef));
                 if (result) {
                     this[NavigationMixin.Navigate]({
